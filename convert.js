@@ -8,7 +8,7 @@ const outputFilePath = process.argv[3];
 const results = [];
 
 fs.createReadStream(inputFilePath)
-  .pipe(csv({ skipLines: 1 }))
+  .pipe(csv({ skipLines: 2 }))
   .on('data', (data) => results.push(data))
   .on('end', () => {
     const transformedData = results.map(row => {
