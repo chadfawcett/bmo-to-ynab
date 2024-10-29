@@ -1,0 +1,13 @@
+{
+  "name": "bmo-to-ynab",
+  "version": "1.0.0",
+  "description": "Convert BMO exported CSV statements to YNAB formatted upload CSV",
+  "main": "convert.js",
+  "scripts": {
+    "start": "node convert.js input.csv output.csv"
+  },
+  "dependencies": {
+    "csv-parser": "^3.0.0",
+    "csv-writer": "^1.6.0"
+  }
+}
