@@ -1,4 +1,4 @@
-# bmo-to-ynab
+# bmo-to-ynab - Created Entirely in Copilot Workspaces
 Convert BMO exported CSV statements to YNAB formatted upload CSV
 
 ## Usage
