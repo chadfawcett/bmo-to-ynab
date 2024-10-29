@@ -7,19 +7,6 @@ const outputFilePath = process.argv[3];
 
 const results = [];
 
-// Read the input.csv file and split its content into lines
-const inputContent = fs.readFileSync(inputFilePath, 'utf-8');
-const lines = inputContent.split('\n');
-
-// Remove the first line from the array of lines
-lines.shift();
-
-// Join the remaining lines back into a single string
-const modifiedContent = lines.join('\n');
-
-// Write the modified content back to the input.csv file
-fs.writeFileSync(inputFilePath, modifiedContent);
-
 fs.createReadStream(inputFilePath)
   .pipe(csv())
   .on('data', (data) => results.push(data))
