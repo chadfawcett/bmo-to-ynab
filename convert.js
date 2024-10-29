@@ -8,11 +8,10 @@ const outputFilePath = process.argv[3];
 const results = [];
 
 fs.createReadStream(inputFilePath)
-  .pipe(csv())
+  .pipe(csv({ skipLines: 1 }))
   .on('data', (data) => results.push(data))
   .on('end', () => {
-    // BMO includes an erroneous first row in the CSV it provides, so we need to skip it
-    const transformedData = results.slice(1).map(row => {
+    const transformedData = results.map(row => {
       return {
         Date: formatDate(row['Posting Date']),
         Payee: row['Description'],
